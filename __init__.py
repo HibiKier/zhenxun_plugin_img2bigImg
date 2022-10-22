@@ -93,7 +93,7 @@ async def _(
             a = "base64://" + a["data"][0].split("base64,")[1]
             await matcher.send(f"{scale}重唱{con}分支大清晰术！" + image(b64=a), at_sender=True)
         else:
-            await matcher.finish("清晰术失败", at_sender=True)
+            await matcher.send("清晰术失败", at_sender=True)
     except Exception as e:
         logger.error(f"超分发生错误 {type(e)}：{e}")
-        await matcher.finish("清晰术失败", at_sender=True)
+        await matcher.send("清晰术失败", at_sender=True)
